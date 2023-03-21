@@ -1,0 +1,36 @@
+{
+    "data":[
+        {
+            "_id": 1,
+            "name": "Supergirl"
+        },
+        {
+            "_id": 2,
+            "name": "Captain Marvel"
+        },
+        {
+            "_id": 3,
+            "name": "Poison Ivy"
+        },
+        {
+            "_id": 4,
+            "name": "Harley Quinn"
+        },
+        {
+            "_id": 5,
+            "name": "Captain America"
+        },
+        {
+            "_id": 6,
+            "name": "Batman"
+        },
+        {
+            "_id": 7,
+            "name": "Ironman"
+        },
+        {
+            "_id": 8,
+            "name": "Superman"
+        }
+    ]
+}
