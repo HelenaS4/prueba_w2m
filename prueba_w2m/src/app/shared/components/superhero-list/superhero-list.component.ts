@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SuperHeroModel } from 'src/app/core/models/superhero.model';
 import superHeroData from 'src/app/data/superheroes.json';
 
@@ -9,7 +9,7 @@ import superHeroData from 'src/app/data/superheroes.json';
 })
 export class SuperheroListComponent implements OnInit {
 
-  @Input() superHeroes: Array<SuperHeroModel> = [];
+  filter:string = ''
 
   superHeores: Array<SuperHeroModel> = []
 
@@ -18,6 +18,20 @@ export class SuperheroListComponent implements OnInit {
   ngOnInit(): void {
     const { data }: any = (superHeroData as any)
     this.superHeores = data;
-    console.log(this.superHeores);
+    this.heroSearch(this.filter);
   }
+
+  heroSearch(term:string): void {
+    if (term !== '') {
+      console.log(term)
+      let filtered_heroes = [];
+      for (const superhero of this.superHeores) {
+        if(superhero.name.includes(term)) {
+          filtered_heroes.push(superhero);
+        }
+      }
+      this.superHeores = filtered_heroes;
+    }
+  }
+
 }
