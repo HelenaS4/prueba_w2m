@@ -1,0 +1,10 @@
+<app-toolbar></app-toolbar>
+<form (ngSubmit)="submitHero()" [formGroup]="formData">
+    <div class="form-group">
+        <mat-form-field appearance="fill">
+            <mat-label>New Hero!</mat-label>
+            <input formControlName="name"  matInput placeholder="Write a name">
+        </mat-form-field>
+        <button mat-flat-button color="primary">Enviar</button>
+    </div>
+</form>

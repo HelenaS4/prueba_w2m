@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { EditHeroRoutingModule } from './edit-hero-routing.module';
 import { EditHeroComponent } from './pages/edit-hero/edit-hero.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 
 @NgModule({
@@ -11,7 +13,8 @@ import { EditHeroComponent } from './pages/edit-hero/edit-hero.component';
   ],
   imports: [
     CommonModule,
-    EditHeroRoutingModule
+    EditHeroRoutingModule,
+    SharedModule
   ]
 })
 export class EditHeroModule { }

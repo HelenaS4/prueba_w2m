@@ -11,8 +11,9 @@ export class AppComponent {
   title = 'app';
 
   constructor() {
-    const { data }: any = (superHeroData as any);
-    localStorage.setItem('superheroes', JSON.stringify(data));
-    console.log('FIRST LIST', JSON.parse(localStorage.getItem('superheroes') || '{}'));
+    if (!localStorage.getItem('superheroes')) {
+      const { data }: any = (superHeroData as any);
+      localStorage.setItem('superheroes', JSON.stringify(data));
+    }
   }
 }

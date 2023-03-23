@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './modules/home/home.module';
 import { EditHeroModule } from './modules/edit-hero/edit-hero.module';
+import { AddHeroModule } from './modules/add-hero/add-hero.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { EditHeroModule } from './modules/edit-hero/edit-hero.module';
     BrowserAnimationsModule,
     HttpClientModule,
     HomeModule,
-    EditHeroModule
+    EditHeroModule,
+    AddHeroModule
   ],
   providers: [],
   bootstrap: [AppComponent]
