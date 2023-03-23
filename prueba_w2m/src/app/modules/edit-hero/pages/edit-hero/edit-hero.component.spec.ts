@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddSuperheroComponent } from './add-superhero.component';
+import { EditHeroComponent } from './edit-hero.component';
 
-describe('AddSuperheroComponent', () => {
-  let component: AddSuperheroComponent;
-  let fixture: ComponentFixture<AddSuperheroComponent>;
+describe('EditHeroComponent', () => {
+  let component: EditHeroComponent;
+  let fixture: ComponentFixture<EditHeroComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddSuperheroComponent ]
+      declarations: [ EditHeroComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AddSuperheroComponent);
+    fixture = TestBed.createComponent(EditHeroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

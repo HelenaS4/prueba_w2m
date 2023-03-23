@@ -7,11 +7,19 @@
                 <mat-icon matPrefix>search</mat-icon>
                 <input [(ngModel)]="filter" type="search" matInput placeholder="Search for a superhero!" class="search-input">
             </mat-form-field>
+            <button mat-flat-button color="primary" (click)="heroSearch(filter)">Filtrar</button>
         </div>
     </mat-card-content>
 </mat-card>  
 
 <mat-grid-list *ngFor="let hero of superHeores" cols="1" rowHeight="100px">
-    <mat-grid-tile>{{ hero.name }}</mat-grid-tile>
+    <mat-grid-tile>{{ hero.name }}
+        <button mat-fab color="primary" (click)="onDelete(hero)" aria-label="Delete a Hero!">
+            <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-fab color="accent" aria-label="Edit a Hero!">
+            <mat-icon>bookmark</mat-icon>
+        </button>
+    </mat-grid-tile>
 </mat-grid-list>
   

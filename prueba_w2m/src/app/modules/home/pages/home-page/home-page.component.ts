@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OptionsComponent } from 'src/app/shared/components/options/options.component';
+import { SuperheroListComponent } from 'src/app/shared/components/superhero-list/superhero-list.component';
 
 @Component({
   selector: 'app-home-page',

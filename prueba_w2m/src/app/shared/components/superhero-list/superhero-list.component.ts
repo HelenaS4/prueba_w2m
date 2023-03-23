@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { SuperHeroModel } from 'src/app/core/models/superhero.model';
-import superHeroData from 'src/app/data/superheroes.json';
+import { SuperHeroService } from './service/shared/components/superhero-list/superHero.service';
+
 
 @Component({
   selector: 'app-superhero-list',
@@ -9,29 +10,42 @@ import superHeroData from 'src/app/data/superheroes.json';
 })
 export class SuperheroListComponent implements OnInit {
 
-  filter:string = ''
+  filter:string = '';
 
-  superHeores: Array<SuperHeroModel> = []
+  superHeores: Array<SuperHeroModel> = [];
 
-  constructor() { }
+  constructor(
+    private superHeroService: SuperHeroService) { }
 
   ngOnInit(): void {
-    const { data }: any = (superHeroData as any)
-    this.superHeores = data;
-    this.heroSearch(this.filter);
+    this.loadSuperHeroes();
+  }
+
+  loadSuperHeroes() {
+    this.superHeores = this.superHeroService.getSuperHeroData();
   }
 
   heroSearch(term:string): void {
+    this.loadSuperHeroes();
+    let filtered_heroes = [];
     if (term !== '') {
-      console.log(term)
-      let filtered_heroes = [];
       for (const superhero of this.superHeores) {
-        if(superhero.name.includes(term)) {
+        if (!isNaN(Number(term))) {
+          if (superhero.id == Number(term)) {
+            filtered_heroes.push(superhero);
+          }
+        }
+        else if(superhero.name.includes(term)) {
           filtered_heroes.push(superhero);
         }
       }
       this.superHeores = filtered_heroes;
     }
+    this.filter = '';
   }
 
+  onDelete(hero:SuperHeroModel) {
+    this.superHeroService.deleteHero(hero.id);
+    this.loadSuperHeroes();
+  }
 }
