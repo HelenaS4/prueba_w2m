@@ -17,7 +17,7 @@
         <button mat-fab color="primary" (click)="onDelete(hero)" aria-label="Delete a Hero!">
             <mat-icon>delete</mat-icon>
         </button>
-        <button mat-fab color="accent" aria-label="Edit a Hero!">
+        <button mat-fab color="accent" (click)="redirectEditHero(hero)" aria-label="Edit a Hero!">
             <mat-icon>bookmark</mat-icon>
         </button>
     </mat-grid-tile>

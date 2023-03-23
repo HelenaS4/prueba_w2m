@@ -30,7 +30,8 @@ export class SuperHeroService {
     localStorage.setItem('superheroes', JSON.stringify(this.superheroes));
   }
 
-  updateHero(heroId:number) {
+  updateHero(heroId:string) {
+    
   }
 
   deleteHero(heroId:number) {

@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class ToolbarComponent {
 
+  redirectHome() {
+    window.location.href = '';
+  }
+
+  redirectAddSuperhero() {
+    window.location.href = 'add-hero'
+  }
 }

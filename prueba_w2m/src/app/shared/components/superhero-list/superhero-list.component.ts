@@ -48,4 +48,8 @@ export class SuperheroListComponent implements OnInit {
     this.superHeroService.deleteHero(hero.id);
     this.loadSuperHeroes();
   }
+
+  redirectEditHero(hero:SuperHeroModel) {
+    window.location.href = 'edit-hero?heroId='+hero.id
+  }
 }
