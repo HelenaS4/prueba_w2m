@@ -30,13 +30,23 @@ export class SuperHeroService {
     localStorage.setItem('superheroes', JSON.stringify(this.superheroes));
   }
 
-  updateHero(heroId:string) {
-    
-  }
+  updateHero(superheroFormData:SuperHeroModel) {
+
+    let updatedSuperheroes = [];
+
+    for (const superhero of this.superheroes) {
+      if (superheroFormData.id == superhero.id) {
+        superhero.name = superheroFormData.name;
+      }
+      updatedSuperheroes.push(superhero);
+    }
+    localStorage.setItem('superheroes', JSON.stringify(updatedSuperheroes));
+    window.location.href = '/';
+  } 
 
   deleteHero(heroId:number) {
     let newSuperheroesList = [];
-    for (const superhero of this.getSuperHeroData()) {
+    for (const superhero of this.superheroes) {
       if (superhero.id != heroId) {
         newSuperheroesList.push(superhero);
       } 
