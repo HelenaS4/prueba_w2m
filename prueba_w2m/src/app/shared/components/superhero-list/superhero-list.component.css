@@ -16,7 +16,6 @@
   text-align: center;
   text-decoration: none #000000 solid;
   text-decoration-thickness: auto;
-  width: 8%;
   max-width: 460px;
   position: relative;
   cursor: pointer;
@@ -119,7 +118,13 @@
   opacity: .5;
 }
 
-@media (min-width: 850px) {
+@media (min-width: 700px) {
+  .filter-hero-button {
+    width: 8%;
+  }
+}
+
+@media (max-width: 300px) {
   .filter-hero-button {
     padding: .75rem 3rem;
     font-size: 1.25rem;
