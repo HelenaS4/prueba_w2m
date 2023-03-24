@@ -1,12 +1,16 @@
 <app-toolbar></app-toolbar>
-<p>edit-hero works!</p>
-<form (ngSubmit)="updateHero()" [formGroup]="formData">
+<div class="title">
+    <h1>Edit a hero!</h1>
+</div>
+<div class="edit-hero-form">
     <div class="form-group">
-        <mat-form-field appearance="fill">
-            <mat-label>Update Hero!</mat-label>
-            <input formControlName="id" type="hidden" value="heroId">
-            <input formControlName="name" matInput placeholder="Write a name">
-        </mat-form-field>
-        <button mat-flat-button color="primary">Enviar</button>
+        <form (ngSubmit)="updateHero()" [formGroup]="formData">
+            <mat-form-field appearance="fill">
+                <mat-label>Update Hero!</mat-label>
+                <input formControlName="id" type="hidden" value="heroId">
+                <input formControlName="name" matInput placeholder="Write a name">
+            </mat-form-field>
+            <button class="edit-hero-button" mat-flat-button color="primary">Enviar</button>
+        </form>
     </div>
-</form>
+</div>

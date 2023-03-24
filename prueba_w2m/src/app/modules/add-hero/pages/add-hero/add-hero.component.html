@@ -1,10 +1,17 @@
 <app-toolbar></app-toolbar>
-<form (ngSubmit)="submitHero()" [formGroup]="formData">
+<div class="title">
+    <h1>Add a new hero!</h1>
+</div>
+<div class="add-hero-form">
     <div class="form-group">
-        <mat-form-field appearance="fill">
-            <mat-label>New Hero!</mat-label>
-            <input formControlName="name"  matInput placeholder="Write a name">
-        </mat-form-field>
-        <button mat-flat-button color="primary">Enviar</button>
+        <form (ngSubmit)="submitHero()" [formGroup]="formData">
+            
+                <mat-form-field appearance="fill">
+                    <mat-label>New Hero!</mat-label>
+                    <input formControlName="name"  matInput placeholder="Write a name">
+                </mat-form-field>
+                <button class="add-hero-button" mat-flat-button color="primary">Enviar</button>
+        </form>
     </div>
-</form>
+</div>
+
