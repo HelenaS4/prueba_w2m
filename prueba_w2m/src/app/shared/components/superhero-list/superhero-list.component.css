@@ -4,7 +4,7 @@
   border: 0 solid #E5E7EB;
   box-sizing: border-box;
   color: #000000;
-  display: inline-;
+  display: inline;
   font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-size: 1rem;
   font-weight: 700;
@@ -120,8 +120,9 @@
 }
 
 @media (min-width: 850px) {
-  .filter-herobutton {
+  .filter-hero-button {
     padding: .75rem 3rem;
     font-size: 1.25rem;
+    width: 15%;
   }
 }

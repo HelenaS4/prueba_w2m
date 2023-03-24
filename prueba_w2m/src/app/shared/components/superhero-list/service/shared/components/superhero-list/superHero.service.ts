@@ -28,6 +28,7 @@ export class SuperHeroService {
 
     this.superheroes.push(newSuperHero);
     localStorage.setItem('superheroes', JSON.stringify(this.superheroes));
+    window.location.href = "/";
   }
 
   updateHero(superheroFormData:SuperHeroModel) {

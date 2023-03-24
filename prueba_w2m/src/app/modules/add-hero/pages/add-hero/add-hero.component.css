@@ -14,8 +14,52 @@
     height: 50px;
 }
 
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
 .add-hero-button {
   background-color: #f44f70 ;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  margin-right: 0.75rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.add-hero-button:hover, .add-hero-button:focus {
+  background-color: #F082AC;
+}
+
+a {
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+  padding-right: 5%;
+}
+
+.go-back {
+  background-color:  #7ab5f0;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
@@ -41,6 +85,6 @@
   touch-action: manipulation;
 }
 
-.add-hero-button:hover, .add-hero-button:focus {
-  background-color: #F082AC;
+.go-back:hover, .go-back:focus {
+  background-color:  #9fccf8;
 }

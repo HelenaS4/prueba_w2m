@@ -22,7 +22,8 @@ export class AddHeroComponent implements OnInit {
 
   submitHero(): void {
     const body = this.formData.value;
-    this.superHeroService.addHero(body.name)
-    window.location.href = "/"
+    if (body.name !=='') {
+      this.superHeroService.addHero(body.name)
+    }
   }
 }

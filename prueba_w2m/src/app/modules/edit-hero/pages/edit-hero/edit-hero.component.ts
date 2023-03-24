@@ -39,18 +39,20 @@ export class EditHeroComponent {
     this.formData = new FormGroup(
       {
         id: new FormControl(this.heroId),
-        name: new FormControl(this.superhero.name,[Validators.required])
+        name: new FormControl(this.superhero.name,[Validators.required, Validators.requiredTrue])
       }
     )
   }
 
   updateHero(): void {
     const body = this.formData.value;
-    let updatedHero:SuperHeroModel = {
-      id: body.id,
-      name: body.name
+    if (body.name !== '') {
+      let updatedHero:SuperHeroModel = {
+        id: body.id,
+        name: body.name
+      }
+      this.superHeroService.updateHero(updatedHero)
     }
-    this.superHeroService.updateHero(updatedHero)
   }
 
 }
