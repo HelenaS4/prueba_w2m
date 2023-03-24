@@ -7,7 +7,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog'; 
 import { FormsModule } from '@angular/forms';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 
@@ -15,6 +17,7 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     SuperheroListComponent,
     ToolbarComponent,
+    ModalComponent,
   ],
   imports: [
     CommonModule,
@@ -23,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     MatGridListModule,
     MatInputModule,
     MatCardModule,
+    MatDialogModule,
     FormsModule
   ],
   exports: [

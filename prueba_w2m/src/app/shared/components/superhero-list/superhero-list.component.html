@@ -14,7 +14,8 @@
 </mat-card>  
 
 <mat-grid-list *ngFor="let hero of superHeores" cols="1" rowHeight="100px">
-    <mat-grid-tile>{{ hero.name }}
+    <mat-grid-tile>
+        <h1>{{ hero.name }}</h1>
         <button  class="update-button" mat-fab (click)="redirectEditHero(hero)" aria-label="Edit a Hero!">
             <mat-icon>border_color</mat-icon>
         </button>

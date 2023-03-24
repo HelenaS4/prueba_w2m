@@ -1,6 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import { SuperHeroModel } from 'src/app/core/models/superhero.model';
 import { SuperHeroService } from './service/shared/components/superhero-list/superHero.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
 
 
 @Component({
@@ -15,7 +17,8 @@ export class SuperheroListComponent implements OnInit {
   superHeores: Array<SuperHeroModel> = [];
 
   constructor(
-    private superHeroService: SuperHeroService) { }
+    private superHeroService: SuperHeroService,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.loadSuperHeroes();
@@ -45,8 +48,17 @@ export class SuperheroListComponent implements OnInit {
   }
 
   onDelete(hero:SuperHeroModel) {
-    this.superHeroService.deleteHero(hero.id);
-    this.loadSuperHeroes();
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '50%',
+      data: {
+        id: hero.id,
+        name: hero.name
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      window.location.href = '/'
+    });
   }
 
   redirectEditHero(hero:SuperHeroModel) {
